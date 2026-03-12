@@ -1,10 +1,9 @@
 import AIParticles from "../components/AIParticles";
-import TiltGlowCard from "../components/TiltGlowCard"
 import { Link } from "react-router-dom"
-import { FileText, Brain, BarChart, UploadCloud, Search, Sparkles, Github, Linkedin, Mail, Star, Send } from "lucide-react"
+import { FileText, Brain, BarChart, Github, Linkedin, Mail, Star, Send } from "lucide-react"
 import { Moon, Sun } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import { useTheme } from "../context/ThemeContext"
 import emailjs from "@emailjs/browser"
 import { CheckCircle2 } from "lucide-react"
