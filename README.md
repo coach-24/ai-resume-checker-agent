@@ -584,7 +584,7 @@ and
 
 **V Meghana**
 
-[![GitHub](https://img.shields.io/badge/GitHub-coach--24-black?logo=github)](https://github.com/Meghanaa21)
+[![GitHub](https://img.shields.io/badge/GitHub-meghanaa?logo=github)](https://github.com/Meghanaa21)
 ---
 
 <div align="center">
