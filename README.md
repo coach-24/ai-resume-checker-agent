@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div align="center">
 
 # 🤖 AI Resume Checker
@@ -584,7 +583,7 @@ and
 
 **V Meghana**
 
-[![GitHub](https://img.shields.io/badge/GitHub-meghanaa?logo=github)](https://github.com/Meghanaa21)
+[![GitHub](https://img.shields.io/badge/GitHub-meghanaa--21-black?logo=github)](https://github.com/Meghanaa21)
 ---
 
 <div align="center">
@@ -843,4 +842,4 @@ Fix:
 ## License
 
 This repository does not currently define a license. Add one if you intend to make reuse explicit.
->>>>>>> d826331 (Add project README)
+
