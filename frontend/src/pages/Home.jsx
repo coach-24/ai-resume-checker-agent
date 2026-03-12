@@ -251,7 +251,7 @@ function Home() {
         >
           {dark ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-slate-600" />}
         </button>
-        <a href="https://github.com/coach-24" target="_blank" rel="noopener noreferrer" className="group">
+        <a href="https://github.com/coach-24/ai-resume-checker-agent" target="_blank" rel="noopener noreferrer" className="group">
           <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-md transition-all duration-300 group-hover:scale-110">
             <Github size={20} className="text-gray-700 dark:text-slate-300 group-hover:text-blue-600" />
           </div>
