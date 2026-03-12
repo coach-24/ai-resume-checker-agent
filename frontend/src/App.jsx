@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-
+import { Analytics } from "@vercel/analytics/react";
 import Home from "./pages/Home"
 import Upload from "./pages/Upload"
 import Processing from "./pages/Processing"
@@ -15,7 +15,7 @@ function App() {
         <Route path="/processing" element={<Processing />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
-
+    <Analytics />
     </BrowserRouter>
   )
 }
