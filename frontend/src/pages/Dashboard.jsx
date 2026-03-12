@@ -75,7 +75,7 @@ function useCountUp(target, duration = 1600) {
       else setValue(Math.floor(start))
     }, 16)
     return () => clearInterval(timer)
-  }, [target])
+  }, [target, duration])
   return value
 }
 

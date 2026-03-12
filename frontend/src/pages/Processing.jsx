@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef, useCallback } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
 import { CheckCircle, Loader, AlertCircle, RefreshCw } from "lucide-react"
 import AIParticles from "../components/AIParticles"
@@ -32,7 +32,7 @@ function Processing() {
     }
   }, [file, navigate])
 
-  const runAnalysis = async () => {
+  const runAnalysis = useCallback(async () => {
     if (!file) return
 
     setError("")
@@ -92,13 +92,13 @@ function Processing() {
       }
       hasFetched.current = false
     }
-  }
+  }, [file, jobDesc, navigate])
 
   useEffect(() => {
     if (file && !hasFetched.current) {
       runAnalysis()
     }
-  }, [file])
+  }, [file, runAnalysis])
 
   const handleRetry = () => {
     setIsRetrying(true)

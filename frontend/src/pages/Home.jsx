@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { FileText, Brain, BarChart,UploadCloud, Search, Sparkles } from "lucide-react"
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
-import { Menu, Github } from "lucide-react"
+import { Github } from "lucide-react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "../context/ThemeContext"
 function Home() {
