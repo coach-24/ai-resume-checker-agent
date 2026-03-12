@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div align="center">
 
 # 🤖 AI Resume Checker
@@ -275,10 +276,171 @@ npm install
 ```
 
 **3. Make sure `.env` file exists at the root of frontend/**
+=======
+# AI Resume Checker Agent
+
+AI Resume Checker Agent is a full-stack web application that analyzes resumes against a target role or job description and returns a structured report with scores, missing skills, ATS feedback, keyword coverage, and actionable improvement suggestions.
+
+The project uses:
+- `FastAPI` for the backend API
+- `Groq` for AI-powered resume analysis
+- `React` + `Create React App` for the frontend
+- `Tailwind CSS`, `Framer Motion`, `Lucide`, `Recharts`, `html2canvas`, and `jsPDF` for the UI and reporting experience
+
+## What It Does
+
+Users can:
+- Upload a resume in `PDF` or `DOCX`
+- Optionally paste a job description
+- Run an AI-driven analysis pipeline
+- View a dashboard with scores and section-level feedback
+- See matched and missing keywords
+- Download the final report as PDF
+
+The backend currently validates files, extracts resume text, and sends that text plus job context to Groq for a structured JSON analysis response.
+
+## Core Features
+
+- Resume upload with drag-and-drop
+- PDF and DOCX parsing
+- AI analysis using Groq
+- ATS compatibility insights
+- Missing skills and keyword gap detection
+- Resume section health scoring
+- Suggestions tailored to the uploaded resume
+- Animated multi-step processing flow
+- Dashboard with visual score breakdowns
+- Light/dark mode support
+- PDF export for the report
+
+## Architecture
+
+### Frontend
+
+The frontend is a React SPA with these main routes:
+
+- `/` - landing page
+- `/upload` - resume upload + job description input
+- `/processing` - upload progress and API execution
+- `/dashboard` - analysis results
+
+Main frontend files:
+
+- [`frontend/src/App.js`](/abs/path/c:/Users/VISHNU/Desktop/ai/frontend/src/App.js)
+- [`frontend/src/pages/Home.jsx`](/abs/path/c:/Users/VISHNU/Desktop/ai/frontend/src/pages/Home.jsx)
+- [`frontend/src/pages/Upload.jsx`](/abs/path/c:/Users/VISHNU/Desktop/ai/frontend/src/pages/Upload.jsx)
+- [`frontend/src/pages/Processing.jsx`](/abs/path/c:/Users/VISHNU/Desktop/ai/frontend/src/pages/Processing.jsx)
+- [`frontend/src/pages/Dashboard.jsx`](/abs/path/c:/Users/VISHNU/Desktop/ai/frontend/src/pages/Dashboard.jsx)
+- [`frontend/src/context/ThemeContext.js`](/abs/path/c:/Users/VISHNU/Desktop/ai/frontend/src/context/ThemeContext.js)
+
+### Backend
+
+The backend exposes a single resume analysis endpoint and is organized into:
+
+- `routes` - HTTP entry points
+- `services` - orchestration and validation
+- `agents` - resume parsing and AI analysis
+- `models` - response schemas
+
+Main backend files:
+
+- [`backend/app/main.py`](/abs/path/c:/Users/VISHNU/Desktop/ai/backend/app/main.py)
+- [`backend/app/routes/resume_routes.py`](/abs/path/c:/Users/VISHNU/Desktop/ai/backend/app/routes/resume_routes.py)
+- [`backend/app/services/resume_service.py`](/abs/path/c:/Users/VISHNU/Desktop/ai/backend/app/services/resume_service.py)
+- [`backend/app/services/analysis_service.py`](/abs/path/c:/Users/VISHNU/Desktop/ai/backend/app/services/analysis_service.py)
+- [`backend/app/agents/resume_parser_agent.py`](/abs/path/c:/Users/VISHNU/Desktop/ai/backend/app/agents/resume_parser_agent.py)
+- [`backend/app/agents/suggestion_agent.py`](/abs/path/c:/Users/VISHNU/Desktop/ai/backend/app/agents/suggestion_agent.py)
+- [`backend/app/models/schemas.py`](/abs/path/c:/Users/VISHNU/Desktop/ai/backend/app/models/schemas.py)
+
+## Analysis Flow
+
+1. The frontend uploads a resume and optional job description to the backend.
+2. The backend validates file type and size.
+3. The parser extracts text from `PDF` or `DOCX`.
+4. The backend sends extracted resume text and job context to Groq.
+5. Groq returns a strict JSON object with scores, insights, and suggestions.
+6. The frontend renders the result in the dashboard.
+
+## Folder Structure
+
+```text
+ai/
+├─ backend/
+│  ├─ app/
+│  │  ├─ agents/
+│  │  ├─ models/
+│  │  ├─ routes/
+│  │  ├─ services/
+│  │  └─ main.py
+│  ├─ requirements.txt
+│  └─ run.py
+├─ frontend/
+│  ├─ public/
+│  ├─ src/
+│  │  ├─ components/
+│  │  ├─ context/
+│  │  └─ pages/
+│  ├─ package.json
+│  └─ tailwind.config.js
+└─ README.md
+```
+
+## Tech Stack
+
+### Frontend
+
+- React 19
+- React Router
+- Framer Motion
+- Tailwind CSS
+- Lucide React
+- Recharts
+- html2canvas
+- jsPDF
+- react-dropzone
+
+### Backend
+
+- FastAPI
+- Uvicorn
+- pdfplumber
+- python-docx
+- pydantic
+- python-dotenv
+- Groq Python SDK
+
+## Environment Variables
+
+### Backend
+
+Create `backend/.env`:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+ALLOWED_ORIGINS=http://localhost:3000
+```
+
+Notes:
+- `GROQ_API_KEY` is required.
+- `ALLOWED_ORIGINS` accepts a comma-separated list for CORS.
+- In production, set these in your hosting provider instead of committing `.env`.
+
+Example production value:
+
+```env
+ALLOWED_ORIGINS=http://localhost:3000,https://your-frontend.vercel.app
+```
+
+### Frontend
+
+Create `frontend/.env`:
+
+>>>>>>> d826331 (Add project README)
 ```env
 REACT_APP_API_URL=http://localhost:8000/api
 ```
 
+<<<<<<< HEAD
 **4. Start the React app**
 ```bash
 npm start
@@ -430,3 +592,255 @@ and
 **If this project helped you, give it a ⭐ on GitHub!**
 
 </div>
+=======
+For production:
+
+```env
+REACT_APP_API_URL=https://your-backend.onrender.com/api
+```
+
+## Local Development
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/coach-24/ai-resume-checker-agent.git
+cd ai-resume-checker-agent
+```
+
+### 2. Start the backend
+
+```bash
+cd backend
+python -m venv .venv
+```
+
+Activate the virtual environment:
+
+Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+macOS/Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the API:
+
+```bash
+python run.py
+```
+
+Backend runs at:
+
+```text
+http://localhost:8000
+```
+
+API docs:
+
+```text
+http://localhost:8000/docs
+```
+
+### 3. Start the frontend
+
+Open a new terminal:
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+Frontend runs at:
+
+```text
+http://localhost:3000
+```
+
+## API
+
+### `POST /api/upload-resume`
+
+Uploads a resume and returns the complete analysis result.
+
+Request:
+- `file`: required, `PDF` or `DOCX`
+- `job_description`: optional string
+
+Example with `curl`:
+
+```bash
+curl -X POST "http://localhost:8000/api/upload-resume" \
+  -F "file=@resume.pdf" \
+  -F "job_description=Backend Developer with FastAPI, SQL, Docker, and AWS experience"
+```
+
+Example response:
+
+```json
+{
+  "resume_score": 82,
+  "skill_match": 76,
+  "ats_compatibility": 88,
+  "keyword_match": 71,
+  "potential_score": 91,
+  "missing_skills": ["Docker", "AWS"],
+  "matched_skills": ["Python", "FastAPI", "SQL", "Git"],
+  "section_health": {
+    "experience": "good",
+    "skills": "good",
+    "education": "average",
+    "projects": "good",
+    "achievements": "missing"
+  },
+  "suggestions": [
+    "Add quantified impact in project bullet points.",
+    "Include AWS-related experience explicitly."
+  ],
+  "ats_issues": [],
+  "matched_keywords": ["python", "fastapi", "sql"],
+  "missing_keywords": ["docker", "aws"]
+}
+```
+
+## File Validation Rules
+
+The backend currently accepts:
+- `application/pdf`
+- `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+
+The upload limit is:
+- `5 MB`
+
+If the file is empty, too large, or has an unsupported MIME type, the API returns a `400` error.
+
+## Deployment
+
+### Backend on Render
+
+Recommended backend deployment flow:
+
+1. Create a Render web service from the repository.
+2. Set the backend root to `backend` if needed in your Render configuration.
+3. Install dependencies from [`backend/requirements.txt`](/abs/path/c:/Users/VISHNU/Desktop/ai/backend/requirements.txt).
+4. Add environment variables in Render:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+ALLOWED_ORIGINS=https://your-frontend.vercel.app
+```
+
+If you also want local development access:
+
+```env
+ALLOWED_ORIGINS=http://localhost:3000,https://your-frontend.vercel.app
+```
+
+### Frontend on Vercel
+
+Recommended Vercel settings:
+
+- Root Directory: `frontend`
+- Install Command: `npm install`
+- Build Command: `npm run build`
+- Output Directory: `build`
+
+Add this environment variable in Vercel:
+
+```env
+REACT_APP_API_URL=https://your-backend.onrender.com/api
+```
+
+After Vercel deploys, update Render `ALLOWED_ORIGINS` with the stable production frontend domain, not preview domains.
+
+Example:
+
+```env
+ALLOWED_ORIGINS=https://your-project.vercel.app
+```
+
+## Troubleshooting
+
+### `GROQ_API_KEY is not configured on the backend server`
+
+Cause:
+- backend environment variable is missing in Render or local `.env`
+
+Fix:
+- add `GROQ_API_KEY` to Render environment variables or `backend/.env`
+
+### CORS errors from the frontend
+
+Cause:
+- frontend URL not included in `ALLOWED_ORIGINS`
+- origin contains a trailing slash
+
+Fix:
+- add the exact frontend origin without trailing slash
+
+Correct:
+
+```env
+ALLOWED_ORIGINS=https://your-project.vercel.app
+```
+
+Incorrect:
+
+```env
+ALLOWED_ORIGINS=https://your-project.vercel.app/
+```
+
+### Vercel build fails with ESLint warnings
+
+Cause:
+- CRA treats warnings as errors in CI builds
+
+Fix:
+- remove unused imports and fix hook dependency warnings before deploying
+
+### Resume parsing returns empty text
+
+Cause:
+- scanned image PDF or file with no extractable text layer
+
+Fix:
+- upload a text-based PDF or DOCX
+
+## Security Notes
+
+- Never commit `.env` files.
+- Never expose `GROQ_API_KEY` in frontend code.
+- Rotate API keys immediately if they are ever shared publicly.
+
+## Current Limitations
+
+- Scanned image resumes are not OCR-processed
+- Analysis quality depends on extracted text quality
+- Groq output must be valid JSON; malformed AI responses raise backend errors
+- The project currently relies on one AI analysis pass rather than a larger multi-stage scoring ensemble
+
+## Future Improvements
+
+- OCR support for scanned PDFs
+- Authentication and saved history
+- Batch resume analysis
+- Better analytics and recruiter comparison modes
+- More robust prompt validation and fallback handling
+- Automated tests for backend parsing and frontend flows
+
+## License
+
+This repository does not currently define a license. Add one if you intend to make reuse explicit.
+>>>>>>> d826331 (Add project README)
