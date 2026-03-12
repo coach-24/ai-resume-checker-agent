@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { useDropzone } from "react-dropzone"
 import { useState } from "react"
-import { UploadCloud, FileText, Trash2, AlertCircle } from "lucide-react"
+import { UploadCloud, FileText, Trash2, AlertCircle, ArrowLeft } from "lucide-react"
 import AIParticles from "../components/AIParticles"
 import { motion } from "framer-motion"
 import { Moon, Sun } from "lucide-react"
@@ -53,6 +53,14 @@ function Upload() {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:bg-slate-900 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 overflow-hidden">
+      <button
+        onClick={() => navigate("/")}
+        className="absolute top-6 left-6 z-30 flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-sm font-medium text-gray-700 shadow-md backdrop-blur-md transition hover:scale-105 hover:text-blue-600 dark:bg-slate-800/80 dark:text-slate-200"
+      >
+        <ArrowLeft size={16} />
+        Home
+      </button>
+
       {/* Dark Mode Toggle */}
       <button
         onClick={toggleDark}
