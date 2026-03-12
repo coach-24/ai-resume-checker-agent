@@ -1,22 +1,22 @@
 import os
 import json
 import re
+from pathlib import Path
 from typing import Dict
 from dotenv import load_dotenv
 
-load_dotenv()
-
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+load_dotenv(dotenv_path=Path(__file__).resolve().parents[2] / ".env")
 
 
 async def analyze_with_ai(resume_text: str, job_description: str) -> Dict:
+    groq_api_key = os.getenv("GROQ_API_KEY", "").strip()
 
-    if not GROQ_API_KEY:
-        raise RuntimeError("GROQ_API_KEY is not set in .env file")
+    if not groq_api_key:
+        raise RuntimeError("GROQ_API_KEY is not configured on the backend server")
 
     from groq import Groq
 
-    client = Groq(api_key=GROQ_API_KEY)
+    client = Groq(api_key=groq_api_key)
 
     resume_short = resume_text[:3000]
     jd_short = job_description[:500] if job_description.strip() else "General resume analysis"
