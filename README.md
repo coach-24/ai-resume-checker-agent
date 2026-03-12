@@ -416,9 +416,11 @@ This project is licensed under the MIT License.
 
 Built by 
 **Vishnu Vardhan G**
+
 [![GitHub](https://img.shields.io/badge/GitHub-coach--24-black?logo=github)](https://github.com/coach-24)
 and
-Built by **V Meghana**
+
+**V Meghana**
 
 [![GitHub](https://img.shields.io/badge/GitHub-coach--24-black?logo=github)](https://github.com/Meghanaa21)
 ---
