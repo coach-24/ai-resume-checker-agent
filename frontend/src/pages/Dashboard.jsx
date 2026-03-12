@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import {
   AlertTriangle, CheckCircle, XCircle, Sparkles, ArrowLeft,
-  Moon, Sun, Download, Briefcase, Info, ChevronDown, ChevronUp,
+  Download, Briefcase, Info, ChevronDown, ChevronUp,
   Target, TrendingUp, FileText, Zap
 } from "lucide-react"
 import {
